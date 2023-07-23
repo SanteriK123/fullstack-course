@@ -1,0 +1,41 @@
+Various mongosh commands used in the exercise, not all included
+
+db.posts.insertOne({
+    title: 'Post One',
+    body: 'Body of post one',
+    category: 'News',
+    likes: 4,
+    tags: ['news', 'events'],
+    user: {
+        name: 'John Doe',
+        status: 'author'
+    },
+    date: Date()
+})
+
+db.posts.insertMany([
+    {
+        title: 'Post Two',
+        body: 'Body of post two',
+        category: 'Technology',
+        date: Date()
+    },
+    {
+        title: 'Post Three',
+        body: 'Body of post three',
+        category: 'News'
+    }
+])
+
+db.posts.updateOne({ title: 'Post One' }, 
+ { $set: 
+    {
+    title: 'Post Two',
+    body: 'New post 2 body',
+    date: Date()
+    }
+ },
+ {
+    upsert: true
+ }
+)
