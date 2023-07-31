@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 id="website-logo">Simple forum</h1>
+    <form class = "publish-form" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <label for="form-title">Title: </label>
+        <input id="form-title" type="text" formControlName="title">
+        <label for="form-description">Description: </label>
+        <input id="form-description" type="text" formControlName="description">
+        <button id="publish-btn" type="submit" [disabled]="!postForm.valid">Submit post</button>
+    </form>
+    
+    <div class="post-group">
+        <div *ngFor="let post of posts" class="post-group-item">
+            <div class="post-content">
+                <p class = "post-title">{{ post.title }} </p>
+                <span class ="underline">
+                    <p class = "post-date">Post submitted at time {{ post.createdAt.slice(11,16) }} and date {{ post.createdAt.slice(0,10) }}.</p>
+                </span>
+                <p class = "post-description">{{ post.description }}</p>
+                <button id="delete-btn" (click)="onDelete(post._id)" class = "post-delete">Delete post</button>
+            </div>
+        </div>
+    <div>
+    <footer id="footer">
+        <p>Made by <a href="https://github.com/SanteriK123">Santeri K</a></p>
+    </footer> 
+</div>
