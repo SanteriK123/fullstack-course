@@ -13,7 +13,12 @@ const appRoutes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+  ],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })
