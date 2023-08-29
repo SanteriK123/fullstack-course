@@ -15,7 +15,7 @@ export class AuthService {
 
   authenticateUser(user: any) {
     let headers = new HttpHeaders();
-    return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers}).pipe();
+    return this.http.post('users/authenticate', user, {headers: headers}).pipe();
   }
 
   storeUserData(token: any, user: any) {
@@ -32,7 +32,7 @@ export class AuthService {
 
   loginUser(user: any) {
     let headers = new HttpHeaders();
-    return this.http.post('http://localhost:3000/users/login', user, {headers: headers}).pipe(map((res: any) => res.json));
+    return this.http.post('users/login', user, {headers: headers}).pipe(map((res: any) => res.json));
   }
 
   logoutUser() {
@@ -46,7 +46,7 @@ export class AuthService {
   }
   registerUser(user: any) {
     let headers = new HttpHeaders();
-    return this.http.post('http://localhost:3000/users/register', user, {headers: headers}).pipe();
+    return this.http.post('users/register', user, {headers: headers}).pipe();
   }
 
 }
