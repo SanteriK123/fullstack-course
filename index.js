@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 app.use(express.static('./dist/angular-src'));
 
 app.get('/*', (req, res) =>
-  res.sendFile('index.html', { root: 'dist/angular-app-heroku/' }),
+  res.sendFile('index.html', { root: 'dist/' }),
 );
 
 // Routes for the app
