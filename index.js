@@ -2,7 +2,7 @@ const express = require("express");
 
 const path = require("path");
 const cors = require("cors");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const posts = require("./routes/posts");
@@ -39,11 +39,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static('./dist'));
-
-app.get('/*', (req, res) =>
-  res.sendFile('index.html', { root: 'dist/' }),
-);
+app.use(express.static("dist"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist/index.html"));
+});
 
 // Routes for the app
 app.use("/posts", posts);
