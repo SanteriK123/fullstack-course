@@ -39,7 +39,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static('./dist/angular-src'));
+app.use(express.static('./dist'));
 
 app.get('/*', (req, res) =>
   res.sendFile('index.html', { root: 'dist/' }),
