@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const mongoose = require("mongoose");
-const Post = require("../model/Post");
+const Post = require("../model/post");
 const requireAuth = require("../config/requireAuth");
 
 // Get, post and delete routes for the posts in the forum
