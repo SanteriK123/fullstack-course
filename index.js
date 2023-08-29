@@ -49,6 +49,6 @@ app.use("/posts", posts);
 app.use("/users", users);
 
 // Start server
-app.listen(8080 || process.env.PORT, () => {
+app.listen(8080 || process.env.MYPORT || process.env.PORT, () => {
   console.log(`Server started on port ${port}`);
 });
