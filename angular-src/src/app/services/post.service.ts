@@ -11,7 +11,7 @@ export class PostService {
       headers: new HttpHeaders()
         .set('Authorization',  `${token}`)
     }
-    return this.http.get('http://localhost:3000/posts', headers).pipe();
+    return this.http.get('posts', headers).pipe();
   }
 
   publishPost(post: any, token: any) {
@@ -21,7 +21,7 @@ export class PostService {
         .set('Authorization',  `${token}`)
     }
     return this.http
-      .post('http://localhost:3000/posts', post, headers)
+      .post('posts', post, headers)
       .pipe(map((res: any) => res.json));
   }
   deletePost(id: any, token: any) {
@@ -31,7 +31,7 @@ export class PostService {
         .set('Authorization',  `${token}`)
     }
     return this.http
-      .delete(`http://localhost:3000/posts/${id}`, headers)
+      .delete(`posts/${id}`, headers)
       .pipe(map((res: any) => res.json));
   }
 }

@@ -12,7 +12,6 @@ export class AuthService {
 
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
 
-
   authenticateUser(user: any) {
     let headers = new HttpHeaders();
     return this.http.post('users/authenticate', user, {headers: headers}).pipe();
