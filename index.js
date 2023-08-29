@@ -23,7 +23,7 @@ mongoose.connection.on("error", (err) => {
 
 const app = express();
 
-const port = process.env.port || process.env.PORT;
+const port = 8080 || process.env.PORT;
 
 // CORS middleware
 app.use(cors());
@@ -39,7 +39,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("./public"));
 
 // Routes for the app
 app.use("/posts", posts);
