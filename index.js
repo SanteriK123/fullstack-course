@@ -39,7 +39,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("./public"));
+app.use(express.static('./dist/angular-src'));
+
+app.get('/*', (req, res) =>
+  res.sendFile('index.html', { root: 'dist/angular-app-heroku/' }),
+);
 
 // Routes for the app
 app.use("/posts", posts);

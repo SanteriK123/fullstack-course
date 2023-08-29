@@ -24,6 +24,8 @@
     "passport-jwt": "^4.0.1"
   },
   "devDependencies": {
+    "@angular/cli": "^16.2.0",
+    "@angular/compiler-cli": "^16.2.2",
     "nodemon": "*"
   }
 }
