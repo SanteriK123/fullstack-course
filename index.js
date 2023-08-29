@@ -39,14 +39,14 @@ app.use((req, res, next) => {
   next();
 });
 
+// Routes for the app
+app.use("/api/posts", posts);
+app.use("/api/users", users);
+
 app.use(express.static("dist"));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/index.html"));
 });
-
-// Routes for the app
-app.use("/posts", posts);
-app.use("/users", users);
 
 // Start server
 app.listen(process.env.PORT || 8080 || process.env.MYPORT, () => {
