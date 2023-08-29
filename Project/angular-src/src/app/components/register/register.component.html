@@ -1,0 +1,10 @@
+<form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <label for="form-username">Username: </label>
+  <input id="form-username" type="text" formControlName="username" />
+  <label for="form-password">Password: </label>
+  <input id="form-password" type="text" formControlName="password" />
+  <button id="register-btn" type="submit" [disabled]="!registerForm.valid">
+    Register account
+  </button>
+</form>
+<p>{{ registerStatus }}</p>

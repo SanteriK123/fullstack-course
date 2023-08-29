@@ -1,0 +1,10 @@
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="form-username">Username: </label>
+  <input id="form-username" type="text" formControlName="username" />
+  <label for="form-password">Password: </label>
+  <input id="form-password" type="text" formControlName="password" />
+  <button id="login-btn" type="submit" [disabled]="!loginForm.valid">
+    Login
+  </button>
+</form>
+<p>{{ loginStatus }}</p>

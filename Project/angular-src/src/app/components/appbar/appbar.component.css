@@ -1,0 +1,23 @@
+.navbar {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: burlywood;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.navbar-home {
+    display: inline-flex;
+}
+
+.navbar-login {
+    margin-right: 30px;
+    display: inline-flex;
+}
+
+li {
+    margin-right: 20px;
+    list-style: none;
+}
